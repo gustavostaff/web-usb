@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Totem · Térmica via WebUSB (protótipo)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Térmica via WebUSB</h1>
+    <p>Protótipo: o totem imprime direto na térmica ligada no USB dele, sem o mini PC.</p>
+  </header>
+
+  <section>
+    <h2>Ambiente</h2>
+    <ul id="env" class="checks"></ul>
+  </section>
+
+  <section>
+    <h2>Impressora</h2>
+    <p id="printer-state" class="state">Desconectada</p>
+    <div class="actions">
+      <button id="connect" class="primary">Conectar impressora</button>
+      <button id="test-page" disabled>Teste rápido</button>
+      <button id="paper" disabled>Status do papel</button>
+      <button id="disconnect" disabled>Desconectar</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Layout 1 · cupom</h2>
+    <p class="hint">Mesmo layout do print server, portado para JS (bytes iguais aos do Python nos testes). Edite o cupom à vontade.</p>
+    <textarea id="coupon" rows="12" spellcheck="false"></textarea>
+    <div class="actions">
+      <label><input type="checkbox" name="via" value="ballot" checked> Via Urna</label>
+      <label><input type="checkbox" name="via" value="participant" checked> Via Participante</label>
+      <button id="coupon-preview">Prévia</button>
+      <button id="coupon-print" class="primary" disabled>Imprimir cupom</button>
+    </div>
+    <div id="coupon-previews" class="previews"></div>
+  </section>
+
+  <section>
+    <h2>Layout 2 · mapa (imagem)</h2>
+    <p class="hint">Teste do caminho da imagem: escolha um print do certificado (<code>/totem/t/&lt;código&gt;?print=1</code>) ou do mapa. Ele é reduzido para 576 pontos (72 mm) e convertido para preto e branco.</p>
+    <div class="actions">
+      <input id="map-file" type="file" accept="image/*">
+      <label><input id="map-dither" type="checkbox" checked> Pontilhado (dither)</label>
+      <label>Contraste <input id="map-contrast" type="range" min="1" max="3" step="0.1" value="1.4"> <span id="map-contrast-value">1.4</span></label>
+      <button id="map-print" class="primary" disabled>Imprimir imagem</button>
+    </div>
+    <div class="previews"><canvas id="map-preview" hidden></canvas></div>
+  </section>
+
+  <section>
+    <h2>Bytes prontos</h2>
+    <p class="hint">Envia um arquivo ESC/POS como está, por exemplo <code>tests/fixtures/completo.bin</code>, gerado pelo print server em Python.</p>
+    <div class="actions">
+      <input id="raw-file" type="file" accept=".bin,application/octet-stream">
+      <button id="raw-print" disabled>Enviar arquivo</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Log</h2>
+    <pre id="log"></pre>
+  </section>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

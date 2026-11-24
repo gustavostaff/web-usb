@@ -1,0 +1,84 @@
+[
+  {
+    "name": "completo",
+    "vias": ["ballot", "participant"],
+    "coupon": {
+      "coupon_number": "T03-00482",
+      "uuid": "c9f27a41-03e8-4a1b-9f00-123456789abc",
+      "short_id": "c9f27a41-03e8",
+      "qr_content": "c9f27a41-03e8-4a1b-9f00-123456789abc",
+      "consult_url": "https://odoo.exemplo.com.br/totem/cupom/c9f27a41-03e8-4a1b-9f00-123456789abc",
+      "name": "Mariana Alves Costa",
+      "email": "mariana.costa@exemplo.com.br",
+      "phone": "(11) 98765-4321",
+      "created_at": "21/10/2026 14:37",
+      "device_code": "T-03",
+      "advertiser": "Eztec",
+      "product": "Town Residences",
+      "regulation_summary": "Promoção válida durante o evento. Um cupom por pessoa (e-mail ou celular).",
+      "prize": {
+        "name": "Vale-viagem para Nova York",
+        "draw_date_text": "15/11/2026 às 18h, no stand",
+        "authorization_certificate": "00.000000/0000",
+        "how_it_works": ["Participam maiores de 18 anos.", "Um cupom por pessoa."],
+        "contact": {"sac": "0800 000 0000", "email": "promo@exemplo.com.br"}
+      },
+      "campo_novo_do_tablet": "ignorado"
+    }
+  },
+  {
+    "name": "so_participante_ordem_trocada",
+    "vias": ["participant"],
+    "coupon": {
+      "coupon_number": "T01-00007",
+      "uuid": "0b1e2f3a-aaaa-4bbb-8ccc-dddddddddddd",
+      "consult_url": "https://odoo.exemplo.com.br/totem/cupom/0b1e2f3a",
+      "name": "João Ninguém",
+      "advertiser": "Construtora Exemplo",
+      "prize": {"name": "Uma TV", "detail": "55 polegadas"}
+    }
+  },
+  {
+    "name": "layout_da_campanha",
+    "vias": ["participant", "ballot"],
+    "coupon": {
+      "coupon_number": "A-1",
+      "uuid": "11111111-2222-4333-8444-555555555555",
+      "consult_url": "https://odoo.exemplo.com.br/totem/cupom/1111",
+      "name": "Ana",
+      "phone": "(11) 90000-0000",
+      "advertiser": "Exemplo",
+      "show_powered_by": false,
+      "layout": {
+        "ballot": {"blocks": {"signature": false, "draw_date": true, "prize": true}, "qr_content": "consult_url"},
+        "participant": {"blocks": {"logo": false, "qr": false, "via_title": false}}
+      },
+      "prize": {"name": "Prêmio", "draw_date_text": "01/12/2026", "how_it_works": ["Só um passo."]}
+    }
+  },
+  {
+    "name": "textos_dificeis",
+    "vias": ["ballot", "participant"],
+    "coupon": {
+      "coupon_number": "  T09-01234 ",
+      "uuid": "abcdefabcdefabcdefabcdefabcdefabcdef",
+      "name": "Maria da   Conceição\tde Souza Albuquerque Cavalcanti Sobrinha Neta",
+      "email": "endereco.de.email.extremamente.longo.sem.espacos@dominio-muito-grande.com.br",
+      "phone": "+55 (11) 9 8765-4321",
+      "advertiser": "Café “Aço” — Ltda…",
+      "product": "Edifício São João · Torre Ômega",
+      "regulation_summary": "Regulamento com palavraquenãocabeemumalinhadecupomtermicodeoitentamilimetrosdelargura e emoji 😀, euro €, ñ, «aspas» e ‘simples’.\nQuebra de linha no meio.",
+      "prize": {
+        "name": "",
+        "detail": "Só o detalhe, sem nome",
+        "how_it_works": ["Item com texto bem comprido para quebrar em mais de uma linha na bobina de 80 mm, conferindo o alinhamento.", ""],
+        "contact": {"email": "sac@exemplo.com.br"}
+      }
+    }
+  },
+  {
+    "name": "minimo",
+    "vias": ["ballot", "participant"],
+    "coupon": {"coupon_number": "0001"}
+  }
+]

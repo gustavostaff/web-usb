@@ -1,0 +1,121 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1d1d1f;
+  background: #f4f3f1;
+}
+
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header p,
+.hint {
+  color: #5c5c60;
+}
+
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button {
+  font: inherit;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid #c8c6c2;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #045b6c;
+  border-color: #045b6c;
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font: 13px/1.4 ui-monospace, monospace;
+}
+
+.checks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checks li::before {
+  content: '✔ ';
+  color: #1a7f37;
+}
+
+.checks li.bad::before {
+  content: '✖ ';
+  color: #c62828;
+}
+
+.state {
+  font-weight: 600;
+}
+
+.state.ok {
+  color: #1a7f37;
+}
+
+.previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.previews canvas {
+  width: 288px; /* 576 pontos pela metade: tamanho aproximado do papel na tela */
+  border: 1px solid #dddad5;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+pre#log {
+  max-height: 260px;
+  overflow: auto;
+  font-size: 12px;
+  background: #1d1d1f;
+  color: #e8e8e8;
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
